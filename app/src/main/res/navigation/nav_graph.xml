@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/mainFragment">
+
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.github.drumber.input2esp.ui.main.MainFragment"
+        android:label="@string/title_main_fragment"
+        tools:layout="@layout/main_fragment" >
+        <action
+            android:id="@+id/action_mainFragment_to_sendFragment"
+            app:destination="@id/sendFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_ESPDeviceSetup"
+            app:destination="@id/ESPDeviceSetup" />
+        <action
+            android:id="@+id/action_mainFragment_to_settingsFragment"
+            app:destination="@id/settingsFragment"
+            app:enterAnim="@anim/anim_slide_up"
+            app:exitAnim="@anim/anim_slide_down"
+            app:popEnterAnim="@anim/anim_slide_up"
+            app:popExitAnim="@anim/anim_slide_down" />
+    </fragment>
+    <fragment
+        android:id="@+id/sendFragment"
+        android:name="com.github.drumber.input2esp.ui.send.SendFragment"
+        android:label="@string/title_send_fragment"
+        tools:layout="@layout/send_fragment" >
+        <action
+            android:id="@+id/action_sendFragment_to_mainFragment"
+            app:destination="@id/mainFragment" />
+        <argument
+            android:name="deviceId"
+            app:argType="integer" />
+    </fragment>
+    <fragment
+        android:id="@+id/ESPDeviceSetup"
+        android:name="com.github.drumber.input2esp.ui.setups.ESPDeviceSetupFragment"
+        android:label="@string/title_esp_device_setup_fragment"
+        tools:layout="@layout/esp_device_setup_fragment" >
+        <action
+            android:id="@+id/action_ESPDeviceSetup_to_mainFragment"
+            app:destination="@id/mainFragment" />
+        <argument
+            android:name="existingDevice"
+            app:argType="string"
+            app:nullable="true"
+            android:defaultValue="@null"/>
+    </fragment>
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="com.github.drumber.input2esp.ui.settings.SettingsFragment"
+        android:label="SettingsFragment" >
+        <action
+            android:id="@+id/action_settingsFragment_to_mainFragment"
+            app:destination="@id/mainFragment" />
+    </fragment>
+</navigation>

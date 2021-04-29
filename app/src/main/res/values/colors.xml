@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+    <color name="grayish_900">#113346</color>
+    <color name="grayish_800">#24485e</color>
+    <color name="grayish_700">#325b74</color>
+    <color name="grayish_600">#416f8b</color>
+    <color name="grayish_500">#4e7e9d</color>
+    <color name="grayish_400">#6891ae</color>
+    <color name="grayish_300">#80a5c0</color>
+    <color name="grayish_200">#a0c0d7</color>
+    <color name="grayish_100">#bedbed</color>
+    <color name="grayish_50">#def1ff</color>
+
+    <color name="blue_900">#155c8e</color>
+    <color name="blue_800">#1e7caf</color>
+    <color name="blue_700">#218dc3</color>
+    <color name="blue_600">#299fd6</color>
+    <color name="blue_500">#30ade4</color>
+    <color name="blue_400">#43bae7</color>
+    <color name="blue_300">#5ec6ea</color>
+    <color name="blue_100">#b6e6f6</color>
+    <color name="blue_50">#e2f6fb</color>
+
+    <color name="highlight_transparent">#3430ADE4</color>
+
+    <color name="state_offline">#C4C4C4</color>
+    <color name="state_online">#6FCF97</color>
+    <color name="state_connected">#27AE60</color>
+    <color name="state_neutral">#F2994A</color>
+    <color name="state_failed">#EB5757</color>
+</resources>

@@ -1,0 +1,56 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Theme.Input2ESP" parent="Base.Theme.App">
+        <item name="android:windowLightStatusBar" tools:ignore="NewApi">true</item>
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/grayish_800</item>
+        <item name="colorPrimaryVariant">@color/grayish_900</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/blue_800</item>
+        <item name="colorSecondaryVariant">@color/blue_900</item>
+        <item name="colorOnSecondary">@color/white</item>
+    </style>
+
+    <style name="Base.Theme.App" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor" tools:ignore="NewApi">?attr/colorSurface</item>
+        <!-- Custom ActionBar -->
+        <item name="actionBarStyle">@style/Widget.MaterialComponents.ActionBar.Surface</item>
+        <item name="actionBarTheme">@style/Widget.App.ActionBar</item>
+    </style>
+
+    <style name="Widget.App.ActionBar" parent="ThemeOverlay.MaterialComponents.ActionBar">
+        <item name="colorPrimary">?attr/colorSurface</item>
+        <item name="colorOnPrimarySurface">?attr/colorOnSurface</item>
+        <item name="titleTextColor">?attr/colorOnSurface</item>
+    </style>
+
+    <style name="Dialog.App.FullScreenDialog" parent="Theme.Input2ESP">
+        <item name="android:windowIsFloating">false</item>
+        <item name="android:windowBackground">?attr/colorSurface</item>
+        <item name="android:windowAnimationStyle">@style/Animation.App.SlideOver</item>
+    </style>
+
+    <style name="Animation.App.SlideOver" parent="@android:style/Animation.Activity">
+        <item name="android:windowEnterAnimation">@anim/anim_zoom_in</item>
+        <item name="android:windowExitAnimation">@anim/anim_slide_down</item>
+    </style>
+
+    <style name="TextAppearance.App.Secondary" parent="TextAppearance.MaterialComponents.Subtitle1">
+        <item name="android:textSize">14sp</item>
+        <item name="lineHeight">20dp</item>
+        <item name="android:textColor">@color/material_on_surface_emphasis_medium</item>
+    </style>
+
+    <style name="Widget.App.Button.OutlinedButton.IconOnly" parent="Widget.MaterialComponents.Button.OutlinedButton">
+        <item name="iconPadding">0dp</item>
+        <item name="android:insetTop">0dp</item>
+        <item name="android:insetBottom">0dp</item>
+        <item name="android:paddingLeft">12dp</item>
+        <item name="android:paddingRight">12dp</item>
+        <item name="android:minWidth">48dp</item>
+        <item name="android:minHeight">48dp</item>
+    </style>
+
+</resources>

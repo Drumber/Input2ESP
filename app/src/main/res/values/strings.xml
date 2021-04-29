@@ -1,0 +1,116 @@
+<resources>
+    <string name="app_name">Input2ESP</string>
+
+    <!-- kp2a plugin information -->
+    <string name="kp2aplugin_title">Input2ESP</string>
+    <string name="kp2aplugin_shortdesc">Send credentials from KP2A to your PC using Wifi Duck, Cactus WHID or similar.</string>
+    <string name="kp2aplugin_author">Drumber</string>
+
+    <!-- Fragment title -->
+    <string name="title_main_fragment">Home</string>
+    <string name="title_main_fragment_select">Select Device</string>
+    <string name="title_send_fragment">Send Credentials</string>
+    <string name="title_esp_device_setup_fragment">ESP Device Setup</string>
+
+    <!-- Action texts -->
+    <string name="action_send_to_esp">Send to ESP</string>
+    <string name="action_send">Send</string>
+    <string name="settings">Settings</string>
+    <string name="action_clear_list">Clear list</string>
+    <string name="action_add_device">Add device</string>
+    <string name="action_delete">Delete</string>
+    <string name="action_save">Save</string>
+    <string name="action_cancel">Cancel</string>
+    <string name="action_discard">Discard</string>
+    <string name="action_connect">Connect</string>
+    <string name="action_disconnect">Disconnect</string>
+    <string name="action_dismiss">Dismiss</string>
+    <string name="action_discover_devices">Discover devices</string>
+
+    <!-- Device Network States -->
+    <string name="state_connected">Connected</string>
+    <string name="state_disconnected">Disconnected</string>
+    <string name="state_offline">Offline</string>
+    <string name="state_online">Online</string>
+
+    <!-- Error messages -->
+    <string name="error_device_exists">Device already exists.</string>
+    <string name="error_not_configured">Not configured</string>
+    <string name="error_unnamed_device">Unnamed device</string>
+    <string name="error_empty_payload">Empty command</string>
+    <string name="error_no_commands">No commands specified.</string>
+    <string name="error_device_not_found">Device not found.</string>
+    <string name="error_invalid_address_port">Invalid network address or port.</string>
+    <string name="error_network_connection_timeout">Connection timed out.</string>
+    <string name="error_network_unsupported_address">Unsupported socket address.</string>
+    <string name="error_network_cannot_connect">Cannot connect to server.</string>
+    <string name="error_network_regular_error">Network error.</string>
+    <string name="error_network_connection_lost">Lost connection to the server.</string>
+
+    <!-- Content descriptions -->
+    <string name="desc_fab_add_device">Add new device</string>
+    <string name="desc_edit_device">Edit device</string>
+    <string name="desc_delete_device">Delete device</string>
+    <string name="desc_insert_placeholder">Insert Placeholder</string>
+
+    <!-- Headlines and Subtitles -->
+    <string name="headline_set_up_device">Set up device</string>
+    <string name="subtitle_add_new_device_manually">Add new device manually</string>
+    <string name="headline_empty_device_list">The are no devices</string>
+    <string name="subtitle_empty_device_list">Click on + to add a new device.</string>
+
+    <!-- ESP device set up -->
+    <string name="field_device_name">Device name</string>
+    <string name="field_device_hostname_ip">Hostname / IP</string>
+    <string name="field_device_port">Port</string>
+    <string name="field_protocol_mode">Protocol Mode</string>
+
+    <!-- Send Payload -->
+    <string name="field_payload">Payload</string>
+    <string name="description_send_payload">Send payload to the device</string>
+    <string name="field_command_type">Command Type</string>
+    <string name="title_edit_payload">Edit Payload</string>
+    <string name="message_sending_data">Sending data, please wait…</string>
+
+    <string name="placeholder_category_others">Others</string>
+    <string name="placeholder_category_kp2a">Keepass2Android</string>
+    <string name="placeholder_category_date">Date &amp; Time</string>
+    <string name="placeholder_category_keys">Modifier Keys</string>
+
+    <!-- Settings -->
+    <string name="category_appearance">Appearance</string>
+    <string name="category_network">Network</string>
+    <string name="preference_theme">Theme</string>
+    <string-array name="preference_theme_types">
+        <item>Light</item>
+        <item>Dark</item>
+        <item>Follow System</item>
+        <item>Battery Saver</item>
+    </string-array>
+    <string name="preference_auto_discovery">Auto Discovery</string>
+    <string name="preference_auto_discovery_description">Automatically search for online and new devices.</string>
+
+    <!-- Dialogs -->
+    <string name="dialog_title_delete_device">Delete Device</string>
+    <string name="dialog_message_delete_device">Are you sure you want to remove this device?</string>
+    <string name="dialog_title_clear_device_list">Clear List</string>
+    <string name="dialog_message_clear_device_list">Are you sure you want to delete all devices?</string>
+    <string name="dialog_title_save_changes">Discard Changes</string>
+    <string name="dialog_message_save_changes">Do you want to save the changes?</string>
+
+    <string name="message_device_saved">Device saved.</string>
+    <string name="state_connecting">Connecting</string>
+    <string name="state_connectionlost">Connection lost</string>
+    <string name="state_failed">Failed</string>
+    <string name="state_message_received">Message received</string>
+    <string name="title_placeholders">Placeholders</string>
+
+    <!-- Preference Keys DO NOT CHANGE -->
+    <string name="pref_file_key" translatable="false">settings</string>
+    <string name="prefkey_theme" translatable="false">app_theme</string>
+    <string name="prefkey_auto_discovery" translatable="false">auto_discovery</string>
+
+    <string name="field_printline_mode">PrintLine Mode</string>
+    <string name="desc_drag_to_reorder">Drag to reorder</string>
+    <string name="action_add_command">Add Command</string>
+</resources>

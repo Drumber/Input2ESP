@@ -1,0 +1,1 @@
+Keepass2android plugin SDK extracted from the [Keepass2AndroidPluginSDK2 subproject](https://github.com/PhilippC/keepass2android/tree/master/src/java/Keepass2AndroidPluginSDK2).
