@@ -67,7 +67,7 @@
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/device_name_textField"
-                style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="12dp"
@@ -91,7 +91,7 @@
 
                 <com.google.android.material.textfield.TextInputLayout
                     android:id="@+id/device_hostname_textField"
-                    style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -108,7 +108,7 @@
 
                 <com.google.android.material.textfield.TextInputLayout
                     android:id="@+id/device_port_textField"
-                    style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="2"
@@ -117,9 +117,9 @@
                     <com.google.android.material.textfield.TextInputEditText
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:scrollHorizontally="true"
                         android:maxLines="1"
-                        android:inputType="numberSigned"
-                        android:digits="0123456789" />
+                        android:inputType="number" />
 
                 </com.google.android.material.textfield.TextInputLayout>
 
@@ -127,7 +127,7 @@
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/protocol_mode_textField"
-                style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.ExposedDropdownMenu"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="12dp"
