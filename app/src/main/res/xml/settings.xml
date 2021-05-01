@@ -25,4 +25,15 @@
 
     </PreferenceCategory>
 
+    <PreferenceCategory
+        android:title="@string/category_payload_commands">
+
+        <SwitchPreference
+            android:key="@string/prefkey_enter_after_credentials"
+            android:title="@string/preference_enter_after_credentials"
+            android:summary="@string/preference_enter_after_credentials_description"
+            android:defaultValue="true" />
+
+    </PreferenceCategory>
+
 </PreferenceScreen>

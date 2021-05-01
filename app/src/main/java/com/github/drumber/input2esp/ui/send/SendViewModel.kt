@@ -5,6 +5,7 @@ import androidx.lifecycle.*
 import com.github.drumber.input2esp.Input2EspApplication
 import com.github.drumber.input2esp.R
 import com.github.drumber.input2esp.backend.DeviceManager
+import com.github.drumber.input2esp.backend.data.Preferences
 import com.github.drumber.input2esp.backend.models.CommandType
 import com.github.drumber.input2esp.backend.models.DeviceModel
 import com.github.drumber.input2esp.backend.models.ErrorReporting
@@ -125,15 +126,15 @@ class SendViewModel(application: Application) : AndroidViewModel(application) {
     }
 
     private fun addCredentialPayload(placeholder: String) {
-        // TODO: add option for disabling default enter press
-        addPayloadCommand(Payload(CommandType.Print, placeholder.makePlaceholder()))
-        addPayloadCommand(Payload(CommandType.Press, KeyCode.Modifier.ENTER.name.makePlaceholder()))
+        val cmdType = if(Preferences.enterAfterCredentials) CommandType.PrintLine else CommandType.Print
+        addPayloadCommand(Payload(cmdType, placeholder.makePlaceholder()))
     }
 
     private fun addAllCredentialPayloads() {
-        addPayloadCommand(Payload(CommandType.Print, CredentialsHandler.USER_NAME.makePlaceholder()))       // 1. user name
-        addPayloadCommand(Payload(CommandType.Press, KeyCode.Modifier.TAB.name.makePlaceholder()))          // 2. TAB
-        addPayloadCommand(Payload(CommandType.PrintLine, CredentialsHandler.PASSWORD.makePlaceholder()))    // 3. password + Enter
+        val cmdType = if(Preferences.enterAfterCredentials) CommandType.PrintLine else CommandType.Print
+        addPayloadCommand(Payload(CommandType.Print, CredentialsHandler.USER_NAME.makePlaceholder()))   // 1. user name
+        addPayloadCommand(Payload(CommandType.Press, KeyCode.Modifier.TAB.name.makePlaceholder()))      // 2. TAB
+        addPayloadCommand(Payload(cmdType, CredentialsHandler.PASSWORD.makePlaceholder()))              // 3. password (+ Enter)
     }
 
     /**

@@ -12,8 +12,7 @@ object Preferences: KotprefModel() {
 
     var themeMode by stringPref(AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM.toString(), getString(R.string.prefkey_theme))
     var autoDiscovery by booleanPref(true, getString(R.string.prefkey_auto_discovery))
-
-
+    var enterAfterCredentials by booleanPref(true, getString(R.string.prefkey_enter_after_credentials))
 
     /**
      * Get string from resource file

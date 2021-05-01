@@ -80,6 +80,7 @@
     <!-- Settings -->
     <string name="category_appearance">Appearance</string>
     <string name="category_network">Network</string>
+    <string name="category_payload_commands">Payload Commands</string>
     <string name="preference_theme">Theme</string>
     <string-array name="preference_theme_types">
         <item>Light</item>
@@ -89,6 +90,8 @@
     </string-array>
     <string name="preference_auto_discovery">Auto Discovery</string>
     <string name="preference_auto_discovery_description">Automatically search for online and new devices.</string>
+    <string name="preference_enter_after_credentials">Press enter after credentials</string>
+    <string name="preference_enter_after_credentials_description">Change whether the enter key should be pressed when sending credentials from keepass2android.</string>
 
     <!-- Dialogs -->
     <string name="dialog_title_delete_device">Delete Device</string>
@@ -109,6 +112,7 @@
     <string name="pref_file_key" translatable="false">settings</string>
     <string name="prefkey_theme" translatable="false">app_theme</string>
     <string name="prefkey_auto_discovery" translatable="false">auto_discovery</string>
+    <string name="prefkey_enter_after_credentials" translatable="false">enter_after_credentials</string>
 
     <string name="field_printline_mode">PrintLine Mode</string>
     <string name="desc_drag_to_reorder">Drag to reorder</string>
