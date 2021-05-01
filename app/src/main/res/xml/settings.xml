@@ -28,6 +28,11 @@
     <PreferenceCategory
         android:title="@string/category_payload_commands">
 
+        <EditTextPreference
+            android:key="@string/prefkey_default_command_delay"
+            android:title="@string/preference_default_command_delay"
+            android:defaultValue="1000" />
+
         <SwitchPreference
             android:key="@string/prefkey_enter_after_credentials"
             android:title="@string/preference_enter_after_credentials"

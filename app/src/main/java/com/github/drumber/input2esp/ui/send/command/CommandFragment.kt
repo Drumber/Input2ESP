@@ -12,6 +12,7 @@ import androidx.core.widget.addTextChangedListener
 import androidx.fragment.app.DialogFragment
 import androidx.lifecycle.ViewModelProvider
 import com.github.drumber.input2esp.R
+import com.github.drumber.input2esp.backend.data.Preferences
 import com.github.drumber.input2esp.backend.models.CommandType
 import com.github.drumber.input2esp.backend.models.Payload
 import com.github.drumber.input2esp.backend.placeholders.PlaceholderManager
@@ -36,7 +37,6 @@ class CommandFragment : DialogFragment() {
                 ViewGroup.LayoutParams.MATCH_PARENT,
                 ViewGroup.LayoutParams.MATCH_PARENT
             )
-            //window?.setWindowAnimations(R.style.Animation_App_SlideOver)
         }
     }
 
@@ -79,12 +79,24 @@ class CommandFragment : DialogFragment() {
         viewModel.getPayload().observe(viewLifecycleOwner, {
             binding.payloadTextField.editText?.setText(it.payload)
             (binding.commandTypeTextField.editText as? AutoCompleteTextView)?.setText(it.type.name, false)
+            binding.commandDelayTextField.editText?.setText(it.delay.toString())
         })
 
+        // payload field
         binding.payloadTextField.editText?.apply {
             addTextChangedListener {
                 viewModel.getPayload().value?.payload = text.toString()
             }
+        }
+
+        // command delay field
+        binding.commandDelayTextField.editText?.apply {
+            addTextChangedListener {
+                viewModel.getPayload().value?.delay = text.toString().toIntOrNull() ?: 0
+            }
+        }
+        binding.commandDelayTextField.setEndIconOnClickListener {
+            binding.commandDelayTextField.editText?.setText(Preferences.defaultCommandDelay)
         }
 
         // command type text field
@@ -98,13 +110,6 @@ class CommandFragment : DialogFragment() {
         }
 
         // placeholder list
-        //val placeholderAdapter = ArrayAdapter(requireContext(), android.R.layout.simple_list_item_1, viewModel.getPlaceholderList())
-//        binding.placeholdersListView.apply {
-//            adapter = placeholderAdapter
-//            setOnItemClickListener { adapterView, view, i, l ->
-//                binding.payloadTextField.editText?.append(viewModel.getPlaceholder(i))
-//            }
-//        }
         val placeholderGroups = viewModel.getPlaceholderGroups()
         val placeholderAdapter = PlaceholderListAdapter(requireContext(),placeholderGroups.keys.toList(), placeholderGroups)
         binding.placeholdersExpandableListView.apply {

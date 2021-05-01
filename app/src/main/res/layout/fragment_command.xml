@@ -64,6 +64,28 @@
 
                 </com.google.android.material.textfield.TextInputLayout>
 
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/command_delay_textField"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:hint="@string/field_command_delay"
+                    app:suffixText="ms"
+                    app:helperText="@string/field_command_delay_helper"
+                    app:endIconMode="custom"
+                    app:endIconDrawable="@drawable/ic_restore"
+                    app:endIconContentDescription="@string/description_reset_command_delay">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="number"
+                        android:scrollHorizontally="true"
+                        android:maxLines="1"/>
+
+                </com.google.android.material.textfield.TextInputLayout>
+
             </LinearLayout>
 
             <com.google.android.material.appbar.MaterialToolbar

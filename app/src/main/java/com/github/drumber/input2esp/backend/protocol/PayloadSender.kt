@@ -6,6 +6,7 @@ import com.github.drumber.input2esp.backend.models.DeviceModel
 import com.github.drumber.input2esp.backend.models.Payload
 import com.github.drumber.input2esp.backend.placeholders.PlaceholderManager
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.delay
 import kotlinx.coroutines.withContext
 
 class PayloadSender(private val device: DeviceModel, private val placeholderManager: PlaceholderManager) {
@@ -15,6 +16,11 @@ class PayloadSender(private val device: DeviceModel, private val placeholderMana
     suspend fun sendPayload(payload: Payload) {
         if(payload.payload.isBlank()) throw EmptyPayloadException()
 
+        val delay = payload.delay
+        if(delay > 0) {
+            Log.d(TAG, "[Delay] Waiting $delay ms...")
+            delay(delay.toLong())
+        }
         val keycodes = placeholderManager.processText(payload.payload)
         //Log.d(TAG, "Sending Payload [${payload.type}]: ${KeyCode.buildString(keycodes)}") // only for debugging! Could show user login data in logcat
         Log.d(TAG, "Sending Payload [${payload.type}]")
