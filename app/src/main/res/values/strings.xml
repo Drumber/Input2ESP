@@ -1,15 +1,16 @@
 <resources>
-    <string name="app_name">Input2ESP</string>
+    <string name="app_name" translatable="false">Input2ESP</string>
 
     <!-- kp2a plugin information -->
-    <string name="kp2aplugin_title">Input2ESP</string>
-    <string name="kp2aplugin_shortdesc">Send credentials from KP2A to your PC using Wifi Duck, Cactus WHID or similar.</string>
-    <string name="kp2aplugin_author">Drumber</string>
+    <string name="kp2aplugin_title" translatable="false">Input2ESP</string>
+    <string name="kp2aplugin_shortdesc">Send credentials from KP2A to your PC using Wifi enabled HID injectors like Cactus WHID, WifiDuck or similar.</string>
+    <string name="kp2aplugin_author" translatable="false">Drumber</string>
 
     <!-- Fragment title -->
     <string name="title_main_fragment">Home</string>
     <string name="title_main_fragment_select">Select Device</string>
     <string name="title_send_fragment">Send Credentials</string>
+    <string name="title_edit_payload">Edit Payload</string>
     <string name="title_esp_device_setup_fragment">ESP Device Setup</string>
 
     <!-- Action texts -->
@@ -32,6 +33,10 @@
     <string name="state_disconnected">Disconnected</string>
     <string name="state_offline">Offline</string>
     <string name="state_online">Online</string>
+    <string name="state_connecting">Connecting</string>
+    <string name="state_connectionlost">Connection lost</string>
+    <string name="state_failed">Failed</string>
+    <string name="state_message_received">Message received</string>
 
     <!-- Error messages -->
     <string name="error_device_exists">Device already exists.</string>
@@ -64,17 +69,22 @@
     <string name="field_device_hostname_ip">Hostname / IP</string>
     <string name="field_device_port">Port</string>
     <string name="field_protocol_mode">Protocol Mode</string>
-    <string name="info_esploitv2_delay">Make sure that the <b>Live Payload Delay</b> is set to <font face="monospace">0</font> in the ESPloitV2 settings.</string>
+    <string name="info_esploitv2_delay">Make sure that the <b>Live Payload Delay</b> is set to 0 in the ESPloitV2 settings.</string>
+    <string name="message_device_saved">Device saved.</string>
 
     <!-- Send Payload -->
-    <string name="field_payload">Payload</string>
     <string name="description_send_payload">Send payload to the device</string>
+    <string name="message_sending_data">Sending data, please wait…</string>
+    <string name="desc_drag_to_reorder">Drag to reorder</string>
+    <string name="action_add_command">Add Command</string>
+
+    <!-- Edit Command -->
+    <string name="field_payload">Payload</string>
     <string name="field_command_type">Command Type</string>
     <string name="field_command_delay">Command Delay</string>
     <string name="field_command_delay_helper">Delay in ms before sending the command</string>
     <string name="description_reset_command_delay">Reset default command delay.</string>
-    <string name="title_edit_payload">Edit Payload</string>
-    <string name="message_sending_data">Sending data, please wait…</string>
+    <string name="title_placeholders">Placeholders</string>
 
     <string name="placeholder_category_others">Others</string>
     <string name="placeholder_category_kp2a">Keepass2Android</string>
@@ -98,6 +108,13 @@
     <string name="preference_enter_after_credentials_description">Change whether the enter key should be pressed when sending credentials from keepass2android.</string>
     <string name="preference_default_command_delay">Default command delay</string>
 
+    <!-- Preference Keys DO NOT CHANGE -->
+    <string name="pref_file_key" translatable="false">settings</string>
+    <string name="prefkey_theme" translatable="false">app_theme</string>
+    <string name="prefkey_auto_discovery" translatable="false">auto_discovery</string>
+    <string name="prefkey_enter_after_credentials" translatable="false">enter_after_credentials</string>
+    <string name="prefkey_default_command_delay" translatable="false">default_command_delay</string>
+
     <!-- Dialogs -->
     <string name="dialog_title_delete_device">Delete Device</string>
     <string name="dialog_message_delete_device">Are you sure you want to remove this device?</string>
@@ -106,21 +123,4 @@
     <string name="dialog_title_save_changes">Discard Changes</string>
     <string name="dialog_message_save_changes">Do you want to save the changes?</string>
 
-    <string name="message_device_saved">Device saved.</string>
-    <string name="state_connecting">Connecting</string>
-    <string name="state_connectionlost">Connection lost</string>
-    <string name="state_failed">Failed</string>
-    <string name="state_message_received">Message received</string>
-    <string name="title_placeholders">Placeholders</string>
-
-    <!-- Preference Keys DO NOT CHANGE -->
-    <string name="pref_file_key" translatable="false">settings</string>
-    <string name="prefkey_theme" translatable="false">app_theme</string>
-    <string name="prefkey_auto_discovery" translatable="false">auto_discovery</string>
-    <string name="prefkey_enter_after_credentials" translatable="false">enter_after_credentials</string>
-    <string name="prefkey_default_command_delay" translatable="false">default_command_delay</string>
-
-    <string name="field_printline_mode">PrintLine Mode</string>
-    <string name="desc_drag_to_reorder">Drag to reorder</string>
-    <string name="action_add_command">Add Command</string>
 </resources>
