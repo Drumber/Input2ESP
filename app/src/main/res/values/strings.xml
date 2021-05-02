@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name" translatable="false">Input2ESP</string>
+    <string name="app_name">Input2ESP</string>
 
     <!-- kp2a plugin information -->
     <string name="kp2aplugin_title" translatable="false">Input2ESP</string>
@@ -61,7 +61,7 @@
     <!-- Headlines and Subtitles -->
     <string name="headline_set_up_device">Set up device</string>
     <string name="subtitle_add_new_device_manually">Add new device manually</string>
-    <string name="headline_empty_device_list">The are no devices</string>
+    <string name="headline_empty_device_list">There are no devices</string>
     <string name="subtitle_empty_device_list">Click on + to add a new device.</string>
 
     <!-- ESP device set up -->
@@ -83,7 +83,7 @@
     <string name="field_command_type">Command Type</string>
     <string name="field_command_delay">Command Delay</string>
     <string name="field_command_delay_helper">Delay in ms before sending the command</string>
-    <string name="description_reset_command_delay">Reset default command delay.</string>
+    <string name="description_reset_command_delay">Reset to default command delay.</string>
     <string name="title_placeholders">Placeholders</string>
 
     <string name="placeholder_category_others">Others</string>

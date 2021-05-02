@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Input2ESP</string>
+
+    <!-- kp2a plugin information -->
+    <string name="kp2aplugin_shortdesc">Sende Anmeldedaten von KP2A mit Hilfe von Wifi-fähigen HID Injektoren wie Cactus WHID, WifiDuck oder ähnlichen an ein PC.</string>
+
+    <!-- Fragment title -->
+    <string name="title_main_fragment">Home</string>
+    <string name="title_main_fragment_select">Gerät auswählen</string>
+    <string name="title_send_fragment">Anmeldedaten senden</string>
+    <string name="title_edit_payload">Payload bearbeiten</string>
+    <string name="title_esp_device_setup_fragment">ESP Geräte Setup</string>
+
+    <!-- Action texts -->
+    <string name="action_send_to_esp">Sende zu ESP</string>
+    <string name="action_send">Senden</string>
+    <string name="settings">Einstellungen</string>
+    <string name="action_clear_list">Liste löschen</string>
+    <string name="action_add_device">Gerät hinzufügen</string>
+    <string name="action_delete">Löschen</string>
+    <string name="action_save">Speichern</string>
+    <string name="action_cancel">Abbrechen</string>
+    <string name="action_discard">Verwerfen</string>
+    <string name="action_connect">Verbinden</string>
+    <string name="action_disconnect">Verbindung trennen</string>
+    <string name="action_dismiss">Verwerfen</string>
+    <string name="action_discover_devices">Geräte entdecken</string>
+
+    <!-- Device Network States -->
+    <string name="state_connected">Verbunden</string>
+    <string name="state_disconnected">Getrennt</string>
+    <string name="state_offline">Offline</string>
+    <string name="state_online">Online</string>
+    <string name="state_connecting">Verbindet</string>
+    <string name="state_connectionlost">Verbindung unterbrochen</string>
+    <string name="state_failed">Fehlgeschlagen</string>
+    <string name="state_message_received">Nachricht empfangen</string>
+
+    <!-- Error messages -->
+    <string name="error_device_exists">Gerät ist bereits vorhanden.</string>
+    <string name="error_not_configured">Nicht konfiguriert</string>
+    <string name="error_unnamed_device">Unbenanntes Gerät</string>
+    <string name="error_empty_payload">Leerer Befehl</string>
+    <string name="error_no_commands">Keine Befehle festgelegt.</string>
+    <string name="error_device_not_found">Gerät nicht gefunden.</string>
+    <string name="error_invalid_address_port">Ungültige Netzwerkadresse oder Port.</string>
+    <string name="error_network_connection_timeout">Zeitüberschreitung der Verbindung.</string>
+    <string name="error_network_unsupported_address">Nicht unterstützte Socket-Adresse.</string>
+    <string name="error_network_cannot_connect">Keine Verbindung zum Server möglich.</string>
+    <string name="error_network_regular_error">Netzwerkfehler.</string>
+    <string name="error_network_connection_lost">Verbindung zum Server unterbrochen.</string>
+
+    <!-- Content descriptions -->
+    <string name="desc_fab_add_device">Neues Gerät hinzufügen</string>
+    <string name="desc_edit_device">Gerät bearbeiten</string>
+    <string name="desc_delete_device">Gerät löschen</string>
+    <string name="desc_insert_placeholder">Platzhalter einfügen</string>
+
+    <!-- Headlines and Subtitles -->
+    <string name="headline_set_up_device">Gerät einrichten</string>
+    <string name="subtitle_add_new_device_manually">Neues Gerät manuell hinzufügen</string>
+    <string name="headline_empty_device_list">Es sind keine Geräte vorhanden</string>
+    <string name="subtitle_empty_device_list">Klicken Sie auf +, um ein neues Gerät hinzuzufügen.</string>
+
+    <!-- ESP device set up -->
+    <string name="field_device_name">Gerätename</string>
+    <string name="field_device_hostname_ip">Hostname / IP</string>
+    <string name="field_device_port">Port</string>
+    <string name="field_protocol_mode">Protokoll Modus</string>
+    <string name="info_esploitv2_delay">Stellen Sie sicher, dass der <b>Live Payload Delay</b> in den ESPloitV2 Einstellungen auf 0 gesetzt ist.</string>
+    <string name="message_device_saved">Gerät gespeichert.</string>
+
+    <!-- Send Payload -->
+    <string name="description_send_payload">Payload an das Gerät senden</string>
+    <string name="message_sending_data">Sende Daten, bitte warten…</string>
+    <string name="desc_drag_to_reorder">Ziehen zum Umsortieren</string>
+    <string name="action_add_command">Befehl hinzufügen</string>
+
+    <!-- Edit Command -->
+    <string name="field_payload">Payload</string>
+    <string name="field_command_type">Befehlstyp</string>
+    <string name="field_command_delay">Befehlsverzögerung</string>
+    <string name="field_command_delay_helper">Verzögerung in ms vor dem Senden des Befehls</string>
+    <string name="description_reset_command_delay">Zurücksetzen auf Standard Befehlsverzögerung.</string>
+    <string name="title_placeholders">Platzhalter</string>
+
+    <string name="placeholder_category_others">Sonstige</string>
+    <string name="placeholder_category_kp2a">Keepass2Android</string>
+    <string name="placeholder_category_date">Datum &amp; Uhrzeit</string>
+    <string name="placeholder_category_keys">Modifier Keys</string>
+
+    <!-- Settings -->
+    <string name="category_appearance">Erscheinungsbild</string>
+    <string name="category_network">Netzwerk</string>
+    <string name="category_payload_commands">Payload Befehle</string>
+    <string name="preference_theme">Thema</string>
+    <string-array name="preference_theme_types">
+        <item>Hell</item>
+        <item>Dunkel</item>
+        <item>Systemthema folgen</item>
+        <item>Durch Energiesparmodus festgelegt</item>
+    </string-array>
+    <string name="preference_auto_discovery">Automatische Entdeckung</string>
+    <string name="preference_auto_discovery_description">Automatisch nach online und neuen Geräten suchen.</string>
+    <string name="preference_enter_after_credentials">Enter drücken nach Anmeldedaten</string>
+    <string name="preference_enter_after_credentials_description">Festlegen, ob die Eingabetaste beim Senden von Anmeldedaten von keepass2android gedrückt werden soll.</string>
+    <string name="preference_default_command_delay">Standard Befehlsverzögerung</string>
+
+    <!-- Dialogs -->
+    <string name="dialog_title_delete_device">Gerät löschen</string>
+    <string name="dialog_message_delete_device">Sind Sie sicher, dass Sie dieses Gerät entfernen möchten?</string>
+    <string name="dialog_title_clear_device_list">Liste löschen</string>
+    <string name="dialog_message_clear_device_list">Sind Sie sicher, dass Sie alle Geräte löschen wollen?</string>
+    <string name="dialog_title_save_changes">Änderungen verwerfen</string>
+    <string name="dialog_message_save_changes">Möchten Sie die Änderungen speichern?</string>
+
+</resources>
