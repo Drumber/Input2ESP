@@ -141,6 +141,18 @@
 
             </com.google.android.material.textfield.TextInputLayout>
 
+            <TextView
+                android:id="@+id/device_info_textView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                tools:visibility="visible"
+                android:text="@string/info_esploitv2_delay"
+                android:gravity="center_vertical"
+                android:drawablePadding="10dp"
+                style="@style/TextAppearance.MaterialComponents.Caption"
+                app:drawableStartCompat="@drawable/ic_info_outline" />
+
         </LinearLayout>
 
     </androidx.core.widget.NestedScrollView>

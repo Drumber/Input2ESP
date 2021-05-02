@@ -68,6 +68,7 @@ class ESPDeviceSetupFragment : Fragment() {
             setText((viewModel.protocol ?: ESPDeviceModel.Provider.TCP).name, false)
             setOnItemClickListener { adapterView, view, i, l ->
                 viewModel.protocol = protocolAdapter.getItem(i)?.let { ESPDeviceModel.Provider.valueOf(it) }
+                updateDeviceInfoText()
             }
         }
 
@@ -82,6 +83,8 @@ class ESPDeviceSetupFragment : Fragment() {
                 }
             }
         })
+
+        updateDeviceInfoText()
     }
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
@@ -133,6 +136,16 @@ class ESPDeviceSetupFragment : Fragment() {
                     onSaveDeviceAction()
                 }
                 .show()
+    }
+
+    private fun updateDeviceInfoText() {
+        when (viewModel.protocol) {
+            ESPDeviceModel.Provider.ESPloitV2 -> binding.deviceInfoTextView.apply {
+                setText(R.string.info_esploitv2_delay)
+                visibility = View.VISIBLE
+            }
+            else -> binding.deviceInfoTextView.visibility = View.GONE
+        }
     }
 
     private fun navigateUp() = findNavController().navigateUp()

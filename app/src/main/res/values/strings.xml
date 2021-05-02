@@ -64,6 +64,7 @@
     <string name="field_device_hostname_ip">Hostname / IP</string>
     <string name="field_device_port">Port</string>
     <string name="field_protocol_mode">Protocol Mode</string>
+    <string name="info_esploitv2_delay">Make sure that the <b>Live Payload Delay</b> is set to <font face="monospace">0</font> in the ESPloitV2 settings.</string>
 
     <!-- Send Payload -->
     <string name="field_payload">Payload</string>
