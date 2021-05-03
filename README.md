@@ -8,4 +8,4 @@ Input2ESP also provides a plugin for [keepass2android](https://github.com/Philip
 
 ## Supported Devices
 Currently only the [ESPloitV2](https://github.com/exploitagency/ESPloitV2) firmware is supported (installed by default on the [Cactus WHID](https://github.com/whid-injector/WHID)).  
-However, it is planned to create a custom ESP firmware that communicates encrypted over TCP and also to add support for [WifiDuck](https://github.com/SpacehuhnTech/WiFiDuck#dstike-wifi-duck).
+However, it is planned to create a custom ESP firmware that communicates encrypted over TCP and also to add support for [Wifi Duck](https://github.com/SpacehuhnTech/WiFiDuck).

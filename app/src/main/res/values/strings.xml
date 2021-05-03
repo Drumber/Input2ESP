@@ -3,7 +3,7 @@
 
     <!-- kp2a plugin information -->
     <string name="kp2aplugin_title" translatable="false">Input2ESP</string>
-    <string name="kp2aplugin_shortdesc">Send credentials from KP2A to your PC using Wifi enabled HID injectors like Cactus WHID, WifiDuck or similar.</string>
+    <string name="kp2aplugin_shortdesc">Send credentials from KP2A to your PC using Wifi enabled HID injectors like Cactus WHID, Wifi Duck or similar.</string>
     <string name="kp2aplugin_author" translatable="false">Drumber</string>
 
     <!-- Fragment title -->

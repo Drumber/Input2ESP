@@ -3,7 +3,7 @@
     <string name="app_name">Input2ESP</string>
 
     <!-- kp2a plugin information -->
-    <string name="kp2aplugin_shortdesc">Sende Anmeldedaten von KP2A mit Hilfe von Wifi-fähigen HID Injektoren wie Cactus WHID, WifiDuck oder ähnlichen an ein PC.</string>
+    <string name="kp2aplugin_shortdesc">Sende Anmeldedaten von KP2A mit Hilfe von Wifi-fähigen HID Injektoren wie Cactus WHID, Wifi Duck oder ähnlichen an ein PC.</string>
 
     <!-- Fragment title -->
     <string name="title_main_fragment">Home</string>
