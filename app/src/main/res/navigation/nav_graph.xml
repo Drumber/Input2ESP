@@ -53,7 +53,7 @@
     <fragment
         android:id="@+id/settingsFragment"
         android:name="com.github.drumber.input2esp.ui.settings.SettingsFragment"
-        android:label="SettingsFragment" >
+        android:label="@string/title_settings_fragment">
         <action
             android:id="@+id/action_settingsFragment_to_mainFragment"
             app:destination="@id/mainFragment" />

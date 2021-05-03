@@ -10,7 +10,8 @@
             android:title="@string/preference_theme"
             android:entries="@array/preference_theme_types"
             android:entryValues="@array/preference_theme_values"
-            android:defaultValue="-1"/>
+            android:defaultValue="-1"
+            android:icon="@drawable/ic_style_outline" />
 
     </PreferenceCategory>
 
@@ -21,7 +22,8 @@
             android:key="@string/prefkey_auto_discovery"
             android:title="@string/preference_auto_discovery"
             android:summary="@string/preference_auto_discovery_description"
-            android:defaultValue="true" />
+            android:defaultValue="true"
+            android:icon="@drawable/ic_radar" />
 
     </PreferenceCategory>
 
@@ -31,13 +33,31 @@
         <EditTextPreference
             android:key="@string/prefkey_default_command_delay"
             android:title="@string/preference_default_command_delay"
-            android:defaultValue="1000" />
+            android:defaultValue="1000"
+            android:icon="@drawable/ic_hourglass_bottom" />
 
         <SwitchPreference
             android:key="@string/prefkey_enter_after_credentials"
             android:title="@string/preference_enter_after_credentials"
             android:summary="@string/preference_enter_after_credentials_description"
-            android:defaultValue="true" />
+            android:defaultValue="true"
+            android:icon="@drawable/ic_keyboard_return" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:title="@string/category_about">
+
+        <Preference
+            android:key="@string/prefkey_app_version_info"
+            android:title="@string/preference_app_version_info"
+            android:icon="@drawable/ic_info_outline" />
+
+        <Preference
+            android:key="@string/prefkey_app_repo_info"
+            android:title="@string/preference_app_repo_info"
+            android:summary="@string/app_repo_url"
+            android:icon="@drawable/ic_github" />
 
     </PreferenceCategory>
 

@@ -11,6 +11,7 @@
     <string name="title_send_fragment">Anmeldedaten senden</string>
     <string name="title_edit_payload">Payload bearbeiten</string>
     <string name="title_esp_device_setup_fragment">ESP Geräte Setup</string>
+    <string name="title_settings_fragment">Einstellungen</string>
 
     <!-- Action texts -->
     <string name="action_send_to_esp">Sende zu ESP</string>
@@ -94,6 +95,7 @@
     <string name="category_appearance">Erscheinungsbild</string>
     <string name="category_network">Netzwerk</string>
     <string name="category_payload_commands">Payload Befehle</string>
+    <string name="category_about">Informationen</string>
     <string name="preference_theme">Thema</string>
     <string-array name="preference_theme_types">
         <item>Hell</item>
@@ -106,6 +108,8 @@
     <string name="preference_enter_after_credentials">Enter drücken nach Anmeldedaten</string>
     <string name="preference_enter_after_credentials_description">Festlegen, ob die Eingabetaste beim Senden von Anmeldedaten von keepass2android gedrückt werden soll.</string>
     <string name="preference_default_command_delay">Standard Befehlsverzögerung</string>
+    <string name="preference_app_version_info">App Version</string>
+    <string name="preference_app_repo_info">GitHub Repository</string>
 
     <!-- Dialogs -->
     <string name="dialog_title_delete_device">Gerät löschen</string>
