@@ -47,9 +47,16 @@ class MainActivity : AppCompatActivity() {
 
         // set specific title for main fragment if credentials are available
         navController.addOnDestinationChangedListener { controller, destination, arguments ->
-            if(destination.id == R.id.mainFragment && viewModel.getCredentialsData().value != null) {
-                destination.label = getString(R.string.title_main_fragment_select)
-                supportActionBar?.title = getString(R.string.title_main_fragment_select)
+            if(viewModel.getCredentialsData().value != null) {
+                val text = when(destination.id) {
+                    R.id.mainFragment -> getString(R.string.title_main_fragment_select)
+                    R.id.sendFragment -> getString(R.string.title_send_fragment_credentials)
+                    else -> null
+                }
+                text?.let {
+                    destination.label = it
+                    supportActionBar?.title = it
+                }
             }
         }
     }

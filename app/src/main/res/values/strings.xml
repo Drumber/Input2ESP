@@ -10,7 +10,8 @@
     <!-- Fragment title -->
     <string name="title_main_fragment">Home</string>
     <string name="title_main_fragment_select">Select Device</string>
-    <string name="title_send_fragment">Send Credentials</string>
+    <string name="title_send_fragment">Send Payload</string>
+    <string name="title_send_fragment_credentials">Send Credentials</string>
     <string name="title_edit_payload">Edit Payload</string>
     <string name="title_esp_device_setup_fragment">ESP Device Setup</string>
     <string name="title_settings_fragment">Settings</string>
