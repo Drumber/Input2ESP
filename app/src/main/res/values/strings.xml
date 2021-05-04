@@ -88,6 +88,7 @@
     <string name="field_command_delay_helper">Delay in ms before sending the command</string>
     <string name="description_reset_command_delay">Reset to default command delay.</string>
     <string name="title_placeholders">Placeholders</string>
+    <string name="field_search_placeholders">Search placeholders</string>
 
     <string name="placeholder_category_others">Others</string>
     <string name="placeholder_category_kp2a">Keepass2Android</string>
@@ -113,6 +114,7 @@
     <string name="preference_default_command_delay">Default command delay</string>
     <string name="preference_app_version_info">App version</string>
     <string name="preference_app_repo_info">GitHub Repository</string>
+    <string name="preference_placeholder_closures">Placeholder Closures</string>
 
     <!-- Preference Keys DO NOT CHANGE -->
     <string name="pref_file_key" translatable="false">settings</string>
@@ -122,6 +124,7 @@
     <string name="prefkey_default_command_delay" translatable="false">default_command_delay</string>
     <string name="prefkey_app_version_info" translatable="false">app_version_info</string>
     <string name="prefkey_app_repo_info" translatable="false">app_repo_info</string>
+    <string name="prefkey_placeholder_closures" translatable="false">placeholder_closures</string>
 
     <!-- Dialogs -->
     <string name="dialog_title_delete_device">Delete Device</string>
@@ -130,5 +133,6 @@
     <string name="dialog_message_clear_device_list">Are you sure you want to delete all devices?</string>
     <string name="dialog_title_save_changes">Discard Changes</string>
     <string name="dialog_message_save_changes">Do you want to save the changes?</string>
+    <string name="desc_search_placeholders">Search placeholders</string>
 
 </resources>

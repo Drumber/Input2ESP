@@ -100,6 +100,51 @@
 
         </com.google.android.material.appbar.CollapsingToolbarLayout>
 
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:paddingHorizontal="16dp"
+            android:paddingVertical="8dp"
+            android:background="?attr/colorSurface">
+
+            <TextView
+                android:id="@+id/placeholder_textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/title_placeholders"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentStart="true"
+                style="@style/TextAppearance.MaterialComponents.Subtitle1" />
+
+            <ImageButton
+                android:id="@+id/search_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentTop="true"
+                android:clickable="false"
+                android:contentDescription="@string/desc_search_placeholders"
+                android:src="@drawable/ic_search"
+                android:background="?attr/selectableItemBackgroundBorderless"/>
+
+
+            <EditText
+                android:id="@+id/placeholder_search_editText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                tools:visibility="visible"
+                android:padding="0dp"
+                android:background="@android:color/transparent"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentStart="true"
+                android:layout_toStartOf="@id/search_button"
+                android:hint="@string/field_search_placeholders"
+                android:maxLines="1"
+                android:inputType="text" />
+
+        </RelativeLayout>
+
     </com.google.android.material.appbar.AppBarLayout>
 
     <androidx.core.widget.NestedScrollView
@@ -108,40 +153,10 @@
         android:layout_height="match_parent"
         app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
-        <RelativeLayout
+        <com.github.drumber.input2esp.ui.components.NonScrollableExpandableListView
+            android:id="@+id/placeholders_expandableListView"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-            <TextView
-                android:id="@+id/placeholder_textView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:paddingHorizontal="16dp"
-                android:paddingVertical="8dp"
-                android:text="@string/title_placeholders"
-                android:layout_alignParentTop="true"
-                android:layout_alignParentStart="true"
-                android:layout_alignParentEnd="true"
-                style="@style/TextAppearance.MaterialComponents.Subtitle1" />
-
-<!--            <com.github.drumber.input2esp.ui.components.NonScrollableListView-->
-<!--                android:id="@+id/placeholders_listView"-->
-<!--                android:layout_width="match_parent"-->
-<!--                android:layout_height="match_parent"-->
-<!--                android:layout_below="@id/placeholder_textView"-->
-<!--                android:layout_alignParentBottom="true"-->
-<!--                android:layout_alignParentStart="true"/>-->
-
-            <com.github.drumber.input2esp.ui.components.NonScrollableExpandableListView
-                android:id="@+id/placeholders_expandableListView"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_below="@id/placeholder_textView"
-                android:layout_alignParentBottom="true"
-                android:layout_alignParentStart="true"
-                android:layout_alignParentEnd="true"/>
-
-        </RelativeLayout>
+            android:layout_height="match_parent"/>
 
     </androidx.core.widget.NestedScrollView>
 

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:key="@string/pref_file_key">
 
     <PreferenceCategory
@@ -35,6 +36,14 @@
             android:title="@string/preference_default_command_delay"
             android:defaultValue="1000"
             android:icon="@drawable/ic_hourglass_bottom" />
+
+        <ListPreference
+            android:key="@string/prefkey_placeholder_closures"
+            android:title="@string/preference_placeholder_closures"
+            android:entries="@array/preference_placeholder_closures"
+            android:entryValues="@array/preference_placeholder_closures_values"
+            android:defaultValue="%%"
+            app:useSimpleSummaryProvider="true" />
 
         <SwitchPreference
             android:key="@string/prefkey_enter_after_credentials"

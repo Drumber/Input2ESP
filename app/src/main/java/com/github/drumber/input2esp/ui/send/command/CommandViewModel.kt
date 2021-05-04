@@ -14,6 +14,8 @@ class CommandViewModel: ViewModel() {
 
     var sendViewModel: SendViewModel? = null
 
+    var searchText: String? = null
+
     fun getPayload(): LiveData<Payload> = payload
 
     fun setPayload(payload: Payload) {

@@ -7,4 +7,21 @@
         <item>-1</item>
         <item>3</item>
     </string-array>
+
+    <string-array name="preference_placeholder_closures">
+        <item>%placeholder%</item>
+        <item>{placeholder}</item>
+        <item>[placeholder]</item>
+        <item>$placeholder$</item>
+        <item>§placeholder§</item>
+    </string-array>
+
+    <string-array name="preference_placeholder_closures_values">
+        <item>%%</item>
+        <item>{}</item>
+        <item>[]</item>
+        <item>$$</item>
+        <item>§§</item>
+    </string-array>
+
 </resources>

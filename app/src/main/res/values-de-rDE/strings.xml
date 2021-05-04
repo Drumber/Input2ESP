@@ -86,6 +86,7 @@
     <string name="field_command_delay_helper">Verzögerung in ms vor dem Senden des Befehls</string>
     <string name="description_reset_command_delay">Zurücksetzen auf Standard Befehlsverzögerung.</string>
     <string name="title_placeholders">Platzhalter</string>
+    <string name="field_search_placeholders">Platzhalter durchsuchen</string>
 
     <string name="placeholder_category_others">Sonstige</string>
     <string name="placeholder_category_kp2a">Keepass2Android</string>

@@ -1,13 +1,16 @@
 package com.github.drumber.input2esp.ui.send.command
 
 import android.app.Dialog
+import android.content.Context
 import android.content.DialogInterface
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.inputmethod.InputMethodManager
 import android.widget.ArrayAdapter
 import android.widget.AutoCompleteTextView
+import android.widget.Filterable
 import androidx.core.widget.addTextChangedListener
 import androidx.fragment.app.DialogFragment
 import androidx.lifecycle.ViewModelProvider
@@ -122,6 +125,50 @@ class CommandFragment : DialogFragment() {
                 }
                 false
             }
+        }
+
+        // placeholder search
+        binding.searchButton.setOnClickListener {
+            viewModel.searchText = if(viewModel.searchText == null) {
+                ""
+            } else {
+                // reset filter and text field
+                placeholderAdapter.filter.filter(null)
+                binding.placeholderSearchEditText.text.clear()
+                // hide keyboard
+                val imm = requireContext().getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+                view?.let { imm.hideSoftInputFromWindow(it.rootView.windowToken, 0) }
+                null
+            }
+            updatePlaceholderSearch()
+        }
+        // filter on text input
+        binding.placeholderSearchEditText.addTextChangedListener { editable ->
+            placeholderAdapter.filter.filter(editable.toString())
+        }
+
+        updatePlaceholderSearch()
+    }
+
+    private fun updatePlaceholderSearch() {
+        // switch between visible text field or visible placeholder label
+        if(viewModel.searchText == null) {
+            (binding.placeholdersExpandableListView.adapter as Filterable).filter.filter(null)
+            binding.apply {
+                placeholderTextView.visibility = View.VISIBLE
+                placeholderSearchEditText.visibility = View.GONE
+                searchButton.setImageResource(R.drawable.ic_search)
+            }
+        } else {
+            binding.apply {
+                placeholderTextView.visibility = View.GONE
+                placeholderSearchEditText.visibility = View.VISIBLE
+                placeholderSearchEditText.requestFocus()
+                searchButton.setImageResource(R.drawable.ic_close)
+            }
+            // show keyboard
+            val imm = requireContext().getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+            imm.showSoftInput(binding.placeholderSearchEditText, InputMethodManager.SHOW_IMPLICIT)
         }
     }
 

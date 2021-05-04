@@ -1,6 +1,7 @@
 package com.github.drumber.input2esp.backend.placeholders
 
 import com.github.drumber.input2esp.R
+import com.github.drumber.input2esp.backend.data.Preferences
 import com.github.drumber.input2esp.backend.placeholders.handlers.DatePlaceholder
 import com.github.drumber.input2esp.backend.placeholders.handlers.ModifierHandler
 import com.github.drumber.input2esp.backend.utils.CommonUtils
@@ -18,7 +19,13 @@ class PlaceholderManager {
 
     init {
         registerDefaultHandlers()
-        Char.MAX_VALUE
+        updateClosures()
+    }
+
+    fun updateClosures() {
+        val sClosures = Preferences.placeholderClosures.toCharArray()
+        val tail = if(sClosures.size > 1) sClosures[1] else sClosures[0]
+        closure = Closure(sClosures[0].toString(), tail.toString())
     }
 
     fun registerPlaceholder(placeholderText: String, handler: PlaceholderHandler) {
@@ -39,7 +46,8 @@ class PlaceholderManager {
      * @return      processed text as a list of ASCII codes
      */
     fun processText(text: String): List<Int> {
-        val regex = "${closure.head}([\\w-]+?)${closure.tail}".toRegex() // find words between closures (also supports '_' and '-')
+        val esc = '\\'
+        val regex = "$esc${closure.head}([\\w-]+?)$esc${closure.tail}".toRegex() // find words between closures (also supports '_' and '-')
 
         val commandList = mutableListOf<Int>()
 
@@ -123,7 +131,7 @@ class PlaceholderManager {
      * @return  groups with placeholders as a HashMap where the key is the group name
      *          and the value is the list of placeholders.
      */
-    fun getPlaceholderGroups(): Map<String, MutableList<String>> {
+    fun getPlaceholderGroups(): MutableMap<String, MutableList<String>> {
         val othersGroupName = CommonUtils.getStringResource(R.string.placeholder_category_others)
         val groups = linkedMapOf<String, MutableList<String>>()
         val groupPriority = mutableMapOf<String, Int>()
@@ -151,7 +159,7 @@ class PlaceholderManager {
         }
 
         // sort groups by priority
-        return groups.toList().sortedBy { groupPriority[it.first] }.reversed().toMap()
+        return groups.toList().sortedBy { groupPriority[it.first] }.reversed().toMap().toMutableMap()
     }
 
     private fun String.lower() = this.toLowerCase(Locale.getDefault())

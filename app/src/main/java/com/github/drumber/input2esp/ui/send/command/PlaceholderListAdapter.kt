@@ -5,10 +5,16 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.BaseExpandableListAdapter
+import android.widget.Filter
+import android.widget.Filterable
 import android.widget.TextView
 import com.github.drumber.input2esp.R
+import java.util.*
 
-class PlaceholderListAdapter(val context: Context, val groups: List<String>, val itemsGroups: Map<String, List<String>>): BaseExpandableListAdapter() {
+class PlaceholderListAdapter(val context: Context, val groups: List<String>, val itemsGroups: MutableMap<String, MutableList<String>>): BaseExpandableListAdapter(), Filterable {
+
+    private val filter: PlaceholderFilter by lazy { PlaceholderFilter() }
+    private var originalValues: Map<String, List<String>>? = null
 
     override fun getGroupCount(): Int = groups.size
 
@@ -52,5 +58,65 @@ class PlaceholderListAdapter(val context: Context, val groups: List<String>, val
 
     override fun isChildSelectable(groupPosition: Int, childPosition: Int): Boolean {
         return true
+    }
+
+    override fun getFilter(): Filter {
+        return filter
+    }
+
+    private inner class PlaceholderFilter: Filter() {
+        override fun performFiltering(prefix: CharSequence?): FilterResults {
+            val results = FilterResults()
+
+            if(originalValues == null) {
+                synchronized(this) {
+                    originalValues = itemsGroups.toMutableMap()
+                }
+            }
+
+            if(prefix == null || prefix.isEmpty()) {
+                originalValues?.let {
+                    results.values = it
+                    results.count = it.size
+                }
+            } else {
+                val prefixString = prefix.toString().toLowerCase(Locale.ROOT)
+
+                val values = originalValues?.toMutableMap()
+                if(values != null) {
+                    val newValues = mutableMapOf<String, MutableList<String>>()
+
+                    values.entries.forEach { (key, value) ->
+                        // loop over all placeholders of current group
+                        value.forEach { placeholder ->
+                            // add placeholder to new list of current group if it contains the prefix
+                            if(placeholder.contains(prefix, false)) {
+                                val newPlaceholders = newValues[key] ?: mutableListOf()
+                                newPlaceholders.add(placeholder)
+                                newValues[key] = newPlaceholders
+                            }
+                        }
+                    }
+
+                    results.values = newValues
+                    results.count = newValues.size
+                }
+            }
+            return results
+        }
+
+        override fun publishResults(constraint: CharSequence?, results: FilterResults?) {
+            val newValues: Map<out String, MutableList<String>>? = results?.values as? Map<out String, MutableList<String>>
+            if(newValues != null) {
+                itemsGroups.clear()
+                itemsGroups.putAll(newValues)
+                if(results.count > 0) {
+                    notifyDataSetChanged()
+                } else {
+                    notifyDataSetInvalidated()
+                }
+            }
+        }
+
     }
 }
