@@ -26,7 +26,7 @@
     <string name="action_discard">Verwerfen</string>
     <string name="action_connect">Verbinden</string>
     <string name="action_disconnect">Verbindung trennen</string>
-    <string name="action_dismiss">Verwerfen</string>
+    <string name="action_dismiss">Schließen</string>
     <string name="action_discover_devices">Geräte entdecken</string>
 
     <!-- Device Network States -->
