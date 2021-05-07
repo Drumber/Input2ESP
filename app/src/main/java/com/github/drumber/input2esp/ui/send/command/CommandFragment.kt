@@ -114,7 +114,7 @@ class CommandFragment : DialogFragment() {
 
         // placeholder list
         val placeholderGroups = viewModel.getPlaceholderGroups()
-        val placeholderAdapter = PlaceholderListAdapter(requireContext(),placeholderGroups.keys.toList(), placeholderGroups)
+        val placeholderAdapter = PlaceholderListAdapter(requireContext(), placeholderGroups)
         binding.placeholdersExpandableListView.apply {
             setAdapter(placeholderAdapter)
             setOnChildClickListener { expandableListView, view, groupIndex, childIndex, l ->

@@ -9,24 +9,23 @@ import android.widget.Filter
 import android.widget.Filterable
 import android.widget.TextView
 import com.github.drumber.input2esp.R
-import java.util.*
 
-class PlaceholderListAdapter(val context: Context, val groups: List<String>, val itemsGroups: MutableMap<String, MutableList<String>>): BaseExpandableListAdapter(), Filterable {
+class PlaceholderListAdapter(val context: Context, val itemsGroups: MutableMap<String, MutableList<String>>): BaseExpandableListAdapter(), Filterable {
 
     private val filter: PlaceholderFilter by lazy { PlaceholderFilter() }
     private var originalValues: Map<String, List<String>>? = null
 
-    override fun getGroupCount(): Int = groups.size
+    override fun getGroupCount(): Int = itemsGroups.keys.size
 
     override fun getChildrenCount(groupPosition: Int): Int = itemsGroups[getGroup(groupPosition)]?.size ?: 0
 
-    override fun getGroup(groupPosition: Int): Any = groups[groupPosition]
+    override fun getGroup(groupPosition: Int): Any = itemsGroups.keys.toMutableList()[groupPosition]
 
     override fun getChild(groupPosition: Int, childPosition: Int): Any {
         return itemsGroups[getGroup(groupPosition)]?.get(childPosition) ?: ""
     }
 
-    override fun getGroupId(groupPosition: Int): Long = groupPosition.toLong()
+    override fun getGroupId(groupPosition: Int): Long = getGroup(groupPosition).hashCode().toLong()
 
     override fun getChildId(groupPosition: Int, childPosition: Int): Long = childPosition.toLong()
 
@@ -70,7 +69,7 @@ class PlaceholderListAdapter(val context: Context, val groups: List<String>, val
 
             if(originalValues == null) {
                 synchronized(this) {
-                    originalValues = itemsGroups.toMutableMap()
+                    originalValues = itemsGroups.toMap()
                 }
             }
 
@@ -80,8 +79,6 @@ class PlaceholderListAdapter(val context: Context, val groups: List<String>, val
                     results.count = it.size
                 }
             } else {
-                val prefixString = prefix.toString().toLowerCase(Locale.ROOT)
-
                 val values = originalValues?.toMutableMap()
                 if(values != null) {
                     val newValues = mutableMapOf<String, MutableList<String>>()
@@ -90,7 +87,7 @@ class PlaceholderListAdapter(val context: Context, val groups: List<String>, val
                         // loop over all placeholders of current group
                         value.forEach { placeholder ->
                             // add placeholder to new list of current group if it contains the prefix
-                            if(placeholder.contains(prefix, false)) {
+                            if(placeholder.contains(prefix, true)) {
                                 val newPlaceholders = newValues[key] ?: mutableListOf()
                                 newPlaceholders.add(placeholder)
                                 newValues[key] = newPlaceholders
@@ -112,6 +109,7 @@ class PlaceholderListAdapter(val context: Context, val groups: List<String>, val
                 itemsGroups.putAll(newValues)
                 if(results.count > 0) {
                     notifyDataSetChanged()
+
                 } else {
                     notifyDataSetInvalidated()
                 }
