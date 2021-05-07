@@ -112,6 +112,9 @@
     <string name="preference_default_command_delay">Standard Befehlsverzögerung</string>
     <string name="preference_app_version_info">App Version</string>
     <string name="preference_app_repo_info">GitHub Repository</string>
+    <string name="preference_placeholder_closures">Platzhalter Klammern</string>
+    <string name="preference_placeholder_clear_search_on_select">Suche nach Platzhalterauswahl leeren</string>
+    <string name="preference_placeholder_clear_search_on_select_description">Leere die Suche nachdem ein Platzhalter ausgewählt wurde.</string>
 
     <!-- Dialogs -->
     <string name="dialog_title_delete_device">Gerät löschen</string>

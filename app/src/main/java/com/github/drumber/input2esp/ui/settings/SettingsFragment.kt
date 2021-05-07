@@ -25,8 +25,14 @@ class SettingsFragment: PreferenceFragmentCompat() {
         }
 
         // accept only number values for 'default command delay' preference
-        findPreference<EditTextPreference>(getString(R.string.prefkey_default_command_delay))?.setOnBindEditTextListener {
-            it.inputType = InputType.TYPE_CLASS_NUMBER
+        findPreference<EditTextPreference>(getString(R.string.prefkey_default_command_delay))?.apply {
+            setOnBindEditTextListener {
+                it.inputType = InputType.TYPE_CLASS_NUMBER
+            }
+            // show current delay in summary
+            setSummaryProvider {
+                "${(it as EditTextPreference).text} ms"
+            }
         }
 
         val appVersion = requireContext().packageManager.getPackageInfo(requireContext().packageName, 0)

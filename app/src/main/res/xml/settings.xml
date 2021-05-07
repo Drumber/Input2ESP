@@ -43,7 +43,15 @@
             android:entries="@array/preference_placeholder_closures"
             android:entryValues="@array/preference_placeholder_closures_values"
             android:defaultValue="%%"
-            app:useSimpleSummaryProvider="true" />
+            app:useSimpleSummaryProvider="true"
+            android:icon="@drawable/ic_code" />
+
+        <SwitchPreference
+            android:key="@string/prefkey_placeholder_clear_search_on_select"
+            android:title="@string/preference_placeholder_clear_search_on_select"
+            android:summary="@string/preference_placeholder_clear_search_on_select_description"
+            android:defaultValue="true"
+            android:icon="@drawable/ic_search_off" />
 
         <SwitchPreference
             android:key="@string/prefkey_enter_after_credentials"

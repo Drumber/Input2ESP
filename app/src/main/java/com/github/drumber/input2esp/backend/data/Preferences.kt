@@ -15,6 +15,7 @@ object Preferences: KotprefModel() {
     var enterAfterCredentials by booleanPref(true, getString(R.string.prefkey_enter_after_credentials))
     var defaultCommandDelay by stringPref(1000.toString(), getString(R.string.prefkey_default_command_delay))
     var placeholderClosures by stringPref("%%", getString(R.string.prefkey_placeholder_closures))
+    var placeholderCloseSearch by booleanPref(true, getString(R.string.prefkey_placeholder_clear_search_on_select))
 
     /**
      * Get string from resource file

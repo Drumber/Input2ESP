@@ -121,6 +121,9 @@ class CommandFragment : DialogFragment() {
                 val placeholder = placeholderAdapter.getChild(groupIndex, childIndex)
                 if(placeholder is String) {
                     binding.payloadTextField.editText?.append(viewModel.makePlaceholder(placeholder))
+                    if(Preferences.placeholderCloseSearch) {
+                        clearPlaceholderSearch()
+                    }
                     return@setOnChildClickListener true
                 }
                 false
@@ -130,14 +133,10 @@ class CommandFragment : DialogFragment() {
         // placeholder search
         binding.searchButton.setOnClickListener {
             viewModel.searchText = if(viewModel.searchText == null) {
+                binding.appbarLayout.setExpanded(false) // collapse app bar
                 ""
             } else {
-                // reset filter and text field
-                placeholderAdapter.filter.filter(null)
-                binding.placeholderSearchEditText.text.clear()
-                // hide keyboard
-                val imm = requireContext().getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
-                view?.let { imm.hideSoftInputFromWindow(it.rootView.windowToken, 0) }
+                clearPlaceholderSearch()
                 null
             }
             updatePlaceholderSearch()
@@ -170,6 +169,15 @@ class CommandFragment : DialogFragment() {
             val imm = requireContext().getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
             imm.showSoftInput(binding.placeholderSearchEditText, InputMethodManager.SHOW_IMPLICIT)
         }
+    }
+
+    private fun clearPlaceholderSearch() {
+        // reset filter and text field
+        (binding.placeholdersExpandableListView.adapter as Filterable).filter.filter(null)
+        binding.placeholderSearchEditText.text.clear()
+        // hide keyboard
+        val imm = requireContext().getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+        view?.let { imm.hideSoftInputFromWindow(it.rootView.windowToken, 0) }
     }
 
     override fun onDismiss(dialog: DialogInterface) {
